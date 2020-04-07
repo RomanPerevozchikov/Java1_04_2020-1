@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module type="JAVA_MODULE" version="4">
+  <component name="NewModuleRootManager" inherit-compiler-output="true">
+    <exclude-output />
+    <content url="file://$MODULE_DIR$">
+      <sourceFolder url="file://$MODULE_DIR$/src" isTestSource="false" />
+    </content>
+    <orderEntry type="inheritedJdk" />
+    <orderEntry type="sourceFolder" forTests="false" />
+  </component>
+</module>
+
+public class lesson1 {
+    public static void main(String[] args) {
+
+        public static int task3(int a, int b, int c, int d) {
+           return a * (b + (c / d));
+        }
+
+
+        public static boolean task4(int a, int b) {
+            int result = a + b;
+            if (result > 10 && result < 20) return true;
+        }
+
+        public static void task5(int a) {
+            if (a >= 0) System.out.println( "положительное" );
+            else System.out.println ("отрицательное");
+        }
+
+        public static boolean task6(int a) {
+            if (a < 0) return true;
+        }
+
+        public static void task7(String name) {
+            System.out.println ("Привет, " + name + "!");
+
+        }
+
+
+
+
+    }
+
+
+
+
+
+
+}
