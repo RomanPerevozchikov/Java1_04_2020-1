@@ -1,0 +1,28 @@
+
+import java.util.Scanner;
+
+import static java.lang.System.out;
+
+public class Main {
+
+    private static Scanner scanner = new Scanner(System.in);
+
+
+    public static void main(String[] args) {
+        do {
+            out.println("Ваша задача угадать число от 0 - 1000.");
+
+            int correctNumber = (int) (Math.random() * 1000);
+            for (int tryCount = 0; tryCount <= 2; tryCount++) {
+                out.println("Использовано попыток: " + tryCount);
+                int userNumber = scanner.nextInt();
+                if (userNumber == correctNumber) out.println("Поздравляю, вы угадали!");
+                else if (userNumber < correctNumber) out.println("Ответ больше");
+                else out.println("Загаданное число меньше");
+            }
+            out.println("Вы проиграли, правильный ответ: " + correctNumber);
+            out.println("Введите 1, чтобы повторить игру: ");
+        } while (scanner.next().equals("1"));
+    }
+}
+
