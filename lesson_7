@@ -1,0 +1,74 @@
+package ru.geekbrains.lesson7;
+
+public class Cat {
+    private String name;
+    private int appetite;
+    protected boolean hungry;
+
+    public Cat(String name, int appetite){
+        this.name = name;
+        this.appetite = appetite;
+        this.hungry = false;
+    }
+
+    public String getName(){
+        return name;
+    }
+    public int getAppetite() {
+        return appetite;
+    }
+
+    public void eat (Cup cup){
+        if (cup.getVolumeFood() - appetite < 0){
+            System.out.println(this.name + ": this is not enough for me!");
+        }else {
+            cup.decreaseVolumeFood(appetite);
+            System.out.println(this.name + ": ymmmmm...");
+            this.hungry = true;
+        }
+    }
+    public void catInfo (){
+        System.out.println(this.name + (hungry ? " satiety" : " hunger"));
+    }
+}
+
+public class Cup {
+    private int volumeFood;
+
+    public Cup (int volumeFood){
+        this.volumeFood = volumeFood;
+    }
+    public int getVolumeFood(){
+        return volumeFood;
+    }
+
+    public void addFood(int x) {
+        volumeFood = volumeFood + x;
+    }
+
+    public void decreaseVolumeFood (int x) {
+        volumeFood -=x;
+        
+    }
+    public void foodInfo (){
+        System.out.println( "Volume food: " + volumeFood);
+    }
+}
+public class Main {
+
+    public static void main(String[] args) {
+	   Cat[] cats = {
+	           new Cat("Barsik", 25),
+             new Cat("Murzic", 25),
+             new Cat("Pushok", 40),
+             new Cat("Vasiliy", 20),
+       };
+
+	   Cup cup1 = new Cup(100);
+
+	   for (Cat itemCat:cats){
+	       itemCat.eat(cup1);
+	       itemCat.catInfo();
+       }
+    }
+}
